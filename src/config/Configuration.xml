@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases> 
+        <typeAlias alias="Test" type="com.exam.pojo.Test"/>
+        <typeAlias alias="Role" type="com.exam.pojo.Role"/>
+        <typeAlias alias="Department" type="com.exam.pojo.Department"/>
+        <typeAlias alias="Employee" type="com.exam.pojo.Employee"/>
+        <typeAlias alias="ContentType" type="com.exam.pojo.ContentType"/>
+        <typeAlias alias="QuestionType" type="com.exam.pojo.QuestionType"/>
+        <typeAlias alias="Exam" type="com.exam.pojo.Exam"/>
+        
+    </typeAliases> 
+    <!-- 与spring 集成之后,这些可以完全删除,数据库连接的管理交给 spring 去管理 -->
+    <!-- 
+	<environments default="development">
+		<environment id="development">
+		<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+			<property name="driver" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?characterEncoding=utf8" />
+			<property name="username" value="root"/>
+			<property name="password" value="password"/>
+			</dataSource>
+		</environment>
+	</environments>
+	-->
+	
+	<!-- 这里交给sqlSessionFactory 的 mapperLocations属性去得到所有配置信息 -->
+	<!-- 
+	<mappers>
+	    <mapper resource="com/yihaomen/mapper/User.xml"/>
+	</mappers>
+	--> 
+	
+</configuration>

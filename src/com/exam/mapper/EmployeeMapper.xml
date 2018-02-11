@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.EmployeeMapper">
+	<insert id="insertEmployee" parameterType="Employee">
+		INSERT INTO employee
+		(Role_ID,Dep_ID,Name,Number,Sex,Password) VALUES
+		(#{Role_ID},#{Dep_ID},#{Name},#{Number},#{Sex},#{Password})
+	</insert>
+	<delete id="deleteEmployee" parameterType="String">
+		DELETE FROM employee
+		WHERE Number=#{Number}
+	</delete>
+	<update id="updateEmployee" parameterType="Employee">
+		UPDATE employee
+		<set>
+			<if test="Role_ID!=null">Role_ID=#{Role_ID},</if>
+			<if test="Dep_ID!=null">Dep_ID=#{Dep_ID},</if>
+			<if test="Name!=null">Name=#{Name},</if>
+			<if test="Sex!=null">Sex=#{Sex},</if>
+		</set>
+		WHERE ID=#{ID}
+	</update>
+	<select id="selectEmployee" resultType="Employee">
+		SELECT * FROM Employee
+	</select>
+</mapper>

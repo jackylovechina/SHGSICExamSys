@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.DepartmentMapper">
+
+	<insert id="insertDepartment" parameterType="String">
+		INSERT INTO
+		department (DepartmentName) VALUES (#{DepartmentName})
+	</insert>
+	<delete id="deleteDepartment" parameterType="String">
+		DELETE FROM
+		department WHERE DepartmentName=#{DepartmentName}
+	</delete>
+	<update id="updateDepartment" parameterType="Department">
+		UPDATE department
+		SET DepartmentName=#{DepartmentName} WHERE
+		ID=#{ID}
+	</update>
+	<select id="selectDepartment" resultType="Department">
+		SELECT * FROM
+		department
+	</select>
+
+</mapper>

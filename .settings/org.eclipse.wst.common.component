@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SHGSICExamSys">
+        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="SHGSICExamSys"/>
+        <property name="java-output-path" value="/SHGSICExamSys/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.ContentTypeMapper">
+
+	<insert id="insertContentType" parameterType="String">
+		INSERT INTO
+		contenttype(TypeName) VALUES(#{TypeName})
+	</insert>
+
+	<delete id="deleteContentType" parameterType="String">
+		DELETE FROM contenttype
+		WHERE TypeName=#{TypeName}
+	</delete>
+
+	<update id="updateContentType" parameterType="ContentType">
+		UPDATE contenttype SET
+		TypeName=#{TypeName} WHERE ID=#{ID};
+	</update>
+
+	<select id="selectContentType" resultType="ContentType">
+		SELECT * FROM contenttype
+	</select>
+
+</mapper>

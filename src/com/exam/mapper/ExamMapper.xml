@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.ExamMapper">
+	<insert id="insertExam" parameterType="Exam">
+		INSERT INTO
+		exam(ExamName,StartTime,EndTime)
+		VALUES(#{ExamName},#{StartTime},#{EndTime})
+	</insert>
+
+	<delete id="deleteExam" parameterType="String">
+		DELETE FROM exam WHERE
+		ExamName=#{ExamName}
+	</delete>
+
+	<update id="updateExam" parameterType="Exam">
+		UPDATE exam
+		<set>
+			<if test="ExamName!=null">ExamName=#{ExamName}</if>
+			<if test="StartTime!=null">,StartTime=#{StartTime}</if>
+			<if test="EndTime!=null">,EndTime=#{EndTime}</if>
+		</set>
+		WHERE
+		ID=#{ID}
+	</update>
+
+	<select id="selectExam" resultType="Exam">
+		SELECT * FROM Exam
+	</select>
+</mapper>
